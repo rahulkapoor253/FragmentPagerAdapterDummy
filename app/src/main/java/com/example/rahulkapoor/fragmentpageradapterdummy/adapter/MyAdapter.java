@@ -1,6 +1,7 @@
 package com.example.rahulkapoor.fragmentpageradapterdummy.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         holder.tvItem.setText(text);
         InnerAdapter innerAdapter = new InnerAdapter();
-        holder.rvInside.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+        holder.rvInside.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
         holder.rvInside.setAdapter(innerAdapter);
     }
 

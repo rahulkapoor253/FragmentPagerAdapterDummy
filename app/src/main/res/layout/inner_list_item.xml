@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="OK TEXT"
-        android:padding="16dp"
+        android:layout_margin="16dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"/>
 
