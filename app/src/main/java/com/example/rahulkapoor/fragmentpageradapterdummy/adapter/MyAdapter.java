@@ -1,6 +1,7 @@
 package com.example.rahulkapoor.fragmentpageradapterdummy.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
 
         holder.tvItem.setText(text);
+        InnerAdapter innerAdapter = new InnerAdapter();
+        holder.rvInside.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+        holder.rvInside.setAdapter(innerAdapter);
     }
 
     @Override
@@ -43,10 +47,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvItem;
+        private RecyclerView rvInside;
 
         public MyViewHolder(final View itemView) {
             super(itemView);
             tvItem = (TextView) itemView.findViewById(R.id.tv_item);
+            rvInside = (RecyclerView) itemView.findViewById(R.id.rv_inside);
         }
     }
 }

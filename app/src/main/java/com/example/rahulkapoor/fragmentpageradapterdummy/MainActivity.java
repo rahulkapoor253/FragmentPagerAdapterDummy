@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private PagerAdapter pagerAdapter;
     private FrameLayout frame;
     private Button btnSubmit;
-    private String[] rooms = {"ab", "cd", "ef"};
+    private String[] rooms = {"ab", "cd", "ef", "ab", "bc", "cd", "sdssd", "sdad", "dasere", "eqewqew"};
     private ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
     @Override
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 tabLayout.setVisibility(View.VISIBLE);
                 frame.setVisibility(View.GONE);
                 btnSubmit.setVisibility(View.GONE);
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 10; i++) {
                     //multiple instances of fragment1;
                     Fragment1 fragment1 = new Fragment1();
                     Bundle bundle = new Bundle();
