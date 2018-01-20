@@ -38,6 +38,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         InnerAdapter innerAdapter = new InnerAdapter();
         holder.rvInside.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
         holder.rvInside.setAdapter(innerAdapter);
+
+        InnersecondAdapter adapter = new InnersecondAdapter();
+        holder.rvInsidenext.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
+        holder.rvInsidenext.setAdapter(adapter);
     }
 
     @Override
@@ -48,12 +52,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         private TextView tvItem;
-        private RecyclerView rvInside;
+        private RecyclerView rvInside, rvInsidenext;
 
         public MyViewHolder(final View itemView) {
             super(itemView);
             tvItem = (TextView) itemView.findViewById(R.id.tv_item);
             rvInside = (RecyclerView) itemView.findViewById(R.id.rv_inside);
+            rvInsidenext = (RecyclerView) itemView.findViewById(R.id.rv_inside2);
         }
     }
 }
