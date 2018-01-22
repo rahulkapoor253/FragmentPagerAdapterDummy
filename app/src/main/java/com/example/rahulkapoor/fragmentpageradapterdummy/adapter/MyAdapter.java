@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
 
-       // holder.tvItem.setText("HEY : " + position);
+        // holder.tvItem.setText("HEY : " + position);
         InnerAdapter innerAdapter = new InnerAdapter(mContext, text);
         holder.rvInside.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
         holder.rvInside.setAdapter(innerAdapter);
@@ -49,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 3;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

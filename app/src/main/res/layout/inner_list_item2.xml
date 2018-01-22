@@ -4,39 +4,39 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_innerlight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
-        android:text="LIGHT"
+        android:src="@drawable/facebook"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="14sp"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_innerdimlight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
-        android:text="DIM LIGHT"
+        android:src="@drawable/twitter"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="14sp"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_innerfan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
-        android:text="FAN"
+        android:src="@drawable/youtube"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="14sp"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/tv_innersocket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="14dp"
-        android:text="SOCKET"
+        android:src="@drawable/instagram"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="14sp"/>
 

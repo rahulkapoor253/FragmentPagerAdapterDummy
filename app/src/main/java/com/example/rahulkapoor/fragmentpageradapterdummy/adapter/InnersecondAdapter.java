@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.example.rahulkapoor.fragmentpageradapterdummy.R;
 
@@ -23,7 +23,6 @@ public class InnersecondAdapter extends RecyclerView.Adapter<InnersecondAdapter.
     public void onBindViewHolder(final InnersecondAdapter.InnerSecondViewHolder holder, final int position) {
 
 
-
     }
 
     @Override
@@ -32,14 +31,14 @@ public class InnersecondAdapter extends RecyclerView.Adapter<InnersecondAdapter.
     }
 
     public class InnerSecondViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvInnerLight, tvInnerDimLight, tvInnerFan, tvInnerSocket;
+        private ImageView tvInnerLight, tvInnerDimLight, tvInnerFan, tvInnerSocket;
 
         public InnerSecondViewHolder(final View itemView) {
             super(itemView);
-            tvInnerLight = (TextView) itemView.findViewById(R.id.tv_innerlight);
-            tvInnerDimLight = (TextView) itemView.findViewById(R.id.tv_innerdimlight);
-            tvInnerFan = (TextView) itemView.findViewById(R.id.tv_innerfan);
-            tvInnerSocket = (TextView) itemView.findViewById(R.id.tv_innersocket);
+            tvInnerLight = (ImageView) itemView.findViewById(R.id.tv_innerlight);
+            tvInnerDimLight = (ImageView) itemView.findViewById(R.id.tv_innerdimlight);
+            tvInnerFan = (ImageView) itemView.findViewById(R.id.tv_innerfan);
+            tvInnerSocket = (ImageView) itemView.findViewById(R.id.tv_innersocket);
         }
     }
 }
