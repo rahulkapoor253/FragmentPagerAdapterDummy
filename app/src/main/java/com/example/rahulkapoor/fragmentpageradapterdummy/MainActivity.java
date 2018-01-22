@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private PagerAdapter pagerAdapter;
     private FrameLayout frame;
     private Button btnSubmit;
-    private String[] rooms = {"ab", "cd", "ef", "ab", "bc", "cd", "sdssd", "sdad", "dasere", "eqewqew"};
+    private String res = "";
+    private ArrayList<String> rooms = new ArrayList<>();
+    private ArrayList<String> fragData = new ArrayList<>();
     private ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
 
     @Override
@@ -57,14 +59,26 @@ public class MainActivity extends AppCompatActivity {
                 btnSubmit.setVisibility(View.GONE);
                 for (int i = 0; i < 10; i++) {
                     //multiple instances of fragment1;
+                    fragData.clear();
+                    res = "";
                     Fragment1 fragment1 = new Fragment1();
                     Bundle bundle = new Bundle();
                     bundle.putString("text", "HIE THERE " + i);
+                    fragData.add("fragment data1 : " + i);
+                    fragData.add("fragment data2 : " + i);
+                    for (int j = 0; j < fragData.size(); j++) {
+                        res = res + fragData.get(j) + ",";
+                    }
+                    res = res.substring(0, res.length() - 1);
+                    bundle.putString("fragData", res);
                     fragment1.setArguments(bundle);
                     fragmentArrayList.add(fragment1);
                 }
 
 
+                for (int i = 0; i < 10; i++) {
+                    rooms.add("hie there : " + i);
+                }
                 pagerAdapter = new com.example.rahulkapoor.fragmentpageradapterdummy.adapter.PagerAdapter(getSupportFragmentManager(), rooms, fragmentArrayList);
                 viewPager.setAdapter(pagerAdapter);
                 tabLayout.setupWithViewPager(viewPager);

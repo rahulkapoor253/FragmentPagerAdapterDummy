@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import com.example.rahulkapoor.fragmentpageradapterdummy.R;
 
+import java.util.ArrayList;
+
 /**
  * Created by rahulkapoor on 19/01/18.
  */
@@ -20,9 +22,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context mContext;
     private String text;
 
-    public MyAdapter(final Context context, final String data) {
-        this.mContext = context;
-        this.text = data;
+
+    public MyAdapter(final Context context, final String fragData) {
+        mContext = context;
+        this.text = fragData;
     }
 
     @Override
@@ -46,7 +49,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return 20;
+        return 10;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

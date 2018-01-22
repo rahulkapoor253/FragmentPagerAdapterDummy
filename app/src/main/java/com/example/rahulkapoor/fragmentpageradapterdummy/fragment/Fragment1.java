@@ -22,6 +22,8 @@ public class Fragment1 extends Fragment {
     private TextView tvData;
     private String data;
     private RecyclerView recyclerView;
+    private String res = "";
+    private String fragData;
 
 
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
@@ -30,10 +32,13 @@ public class Fragment1 extends Fragment {
         tvData = (TextView) v.findViewById(R.id.tv_data);
         recyclerView = (RecyclerView) v.findViewById(R.id.rv);
 
+        fragData = getArguments().getString("fragData");
+        //String[] arrData = fragData.split(",");
         data = getArguments().getString("text");
         tvData.setText(data);
 
-        MyAdapter myAdapter = new MyAdapter(getContext(), data);
+
+        MyAdapter myAdapter = new MyAdapter(getContext(), fragData);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(myAdapter);
 

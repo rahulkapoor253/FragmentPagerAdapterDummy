@@ -12,13 +12,13 @@ import java.util.ArrayList;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    private String[] rooms;
+    private ArrayList<String> rooms = new ArrayList<>();
     private String data;
     private ArrayList<Fragment> arrayList = new ArrayList<>();
 
-    public PagerAdapter(final FragmentManager fm, final String[] room, final ArrayList<Fragment> fragmentArrayList) {
+    public PagerAdapter(final FragmentManager fm, final ArrayList<String> roomData, final ArrayList<Fragment> fragmentArrayList) {
         super(fm);
-        this.rooms = room;
+        this.rooms = roomData;
         this.arrayList = fragmentArrayList;
     }
 
@@ -35,7 +35,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public CharSequence getPageTitle(final int position) {
 
-        return rooms[position];
+        return rooms.get(position);
     }
 
 
