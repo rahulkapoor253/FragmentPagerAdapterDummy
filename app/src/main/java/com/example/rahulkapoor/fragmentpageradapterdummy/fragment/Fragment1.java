@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class Fragment1 extends Fragment {
 
-    private TextView tvData;
+    //private TextView tvData;
     private String data;
     private RecyclerView recyclerView;
     private ArrayList<String> resList = new ArrayList<>();
@@ -31,13 +31,13 @@ public class Fragment1 extends Fragment {
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment1, container, false);
 
-        tvData = (TextView) v.findViewById(R.id.tv_data);
+        //tvData = (TextView) v.findViewById(R.id.tv_data);
         recyclerView = (RecyclerView) v.findViewById(R.id.rv);
 
         fragData = getArguments().getString("fragData");
         //String[] arrData = fragData.split(",");
         data = getArguments().getString("text");
-        tvData.setText(data);
+        //tvData.setText(data);
 
         //delim is ",";
         String[] data = fragData.split(",");

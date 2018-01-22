@@ -37,7 +37,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
 
-        holder.tvItem.setText("HEY : " + position);
+       // holder.tvItem.setText("HEY : " + position);
         InnerAdapter innerAdapter = new InnerAdapter(mContext, text);
         holder.rvInside.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
         holder.rvInside.setAdapter(innerAdapter);
@@ -59,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(final View itemView) {
             super(itemView);
-            tvItem = (TextView) itemView.findViewById(R.id.tv_item);
+            //tvItem = (TextView) itemView.findViewById(R.id.tv_item);
             rvInside = (RecyclerView) itemView.findViewById(R.id.rv_inside);
             rvInsidenext = (RecyclerView) itemView.findViewById(R.id.rv_inside2);
         }

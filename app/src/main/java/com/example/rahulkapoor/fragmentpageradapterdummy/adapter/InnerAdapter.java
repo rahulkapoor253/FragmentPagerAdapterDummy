@@ -34,7 +34,10 @@ public class InnerAdapter extends RecyclerView.Adapter<InnerAdapter.InnerViewHol
 
     @Override
     public void onBindViewHolder(final InnerAdapter.InnerViewHolder holder, final int position) {
-        holder.tvInnerData.setText(textList.get(position));
+        holder.tvInnerLight.setText(textList.get(position));
+//        holder.tvInnerDimLight.setText(textList.get(position));
+//        holder.tvInnerFan.setText(textList.get(position));
+//        holder.tvInnerSocket.setText(textList.get(position));
 
     }
 
@@ -45,11 +48,12 @@ public class InnerAdapter extends RecyclerView.Adapter<InnerAdapter.InnerViewHol
 
     public class InnerViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvInnerData;
+        TextView tvInnerLight, tvInnerDimLight, tvInnerFan, tvInnerSocket;
 
         public InnerViewHolder(final View itemView) {
             super(itemView);
-            tvInnerData = (TextView) itemView.findViewById(R.id.tv_inneritem);
+            tvInnerLight = (TextView) itemView.findViewById(R.id.tv_inneritem);
+
         }
     }
 }

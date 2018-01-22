@@ -5,11 +5,38 @@
               android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_inner2item"
+        android:id="@+id/tv_innerlight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="OK TEXT2"
+        android:layout_margin="14dp"
+        android:text="LIGHT"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_innerdimlight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:text="DIM LIGHT"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_innerfan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:text="FAN"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/tv_innersocket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:text="SOCKET"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="14sp"/>
 

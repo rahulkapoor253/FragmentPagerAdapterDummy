@@ -22,18 +22,24 @@ public class InnersecondAdapter extends RecyclerView.Adapter<InnersecondAdapter.
     @Override
     public void onBindViewHolder(final InnersecondAdapter.InnerSecondViewHolder holder, final int position) {
 
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 12;
+        return 4;
     }
 
     public class InnerSecondViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvData;
+        private TextView tvInnerLight, tvInnerDimLight, tvInnerFan, tvInnerSocket;
+
         public InnerSecondViewHolder(final View itemView) {
             super(itemView);
-            tvData = (TextView) itemView.findViewById(R.id.tv_inner2item);
+            tvInnerLight = (TextView) itemView.findViewById(R.id.tv_innerlight);
+            tvInnerDimLight = (TextView) itemView.findViewById(R.id.tv_innerdimlight);
+            tvInnerFan = (TextView) itemView.findViewById(R.id.tv_innerfan);
+            tvInnerSocket = (TextView) itemView.findViewById(R.id.tv_innersocket);
         }
     }
 }
