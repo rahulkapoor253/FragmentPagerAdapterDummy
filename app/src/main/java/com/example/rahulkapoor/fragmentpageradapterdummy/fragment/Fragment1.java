@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.example.rahulkapoor.fragmentpageradapterdummy.R;
 import com.example.rahulkapoor.fragmentpageradapterdummy.adapter.MyAdapter;
 
+import java.util.ArrayList;
+
 /**
  * Created by rahulkapoor on 19/01/18.
  */
@@ -22,7 +24,7 @@ public class Fragment1 extends Fragment {
     private TextView tvData;
     private String data;
     private RecyclerView recyclerView;
-    private String res = "";
+    private ArrayList<String> resList = new ArrayList<>();
     private String fragData;
 
 
@@ -37,8 +39,13 @@ public class Fragment1 extends Fragment {
         data = getArguments().getString("text");
         tvData.setText(data);
 
+        //delim is ",";
+        String[] data = fragData.split(",");
+        for (int i = 0; i < data.length; i++) {
+            resList.add(data[i]);
+        }
 
-        MyAdapter myAdapter = new MyAdapter(getContext(), fragData);
+        MyAdapter myAdapter = new MyAdapter(getContext(), resList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(myAdapter);
 

@@ -20,10 +20,10 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private Context mContext;
-    private String text;
+    private ArrayList<String> text = new ArrayList<>();
 
 
-    public MyAdapter(final Context context, final String fragData) {
+    public MyAdapter(final Context context, final ArrayList<String> fragData) {
         mContext = context;
         this.text = fragData;
     }
@@ -37,8 +37,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(final MyAdapter.MyViewHolder holder, final int position) {
 
-        holder.tvItem.setText(text);
-        InnerAdapter innerAdapter = new InnerAdapter();
+        holder.tvItem.setText("HEY : " + position);
+        InnerAdapter innerAdapter = new InnerAdapter(mContext, text);
         holder.rvInside.setLayoutManager(new GridLayoutManager(mContext, 4, LinearLayoutManager.VERTICAL, false));
         holder.rvInside.setAdapter(innerAdapter);
 
