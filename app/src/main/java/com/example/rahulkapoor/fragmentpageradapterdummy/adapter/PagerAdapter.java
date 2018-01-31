@@ -28,6 +28,11 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
+    public int getItemPosition(final Object object) {
+        return POSITION_NONE;
+    }
+
+    @Override
     public int getCount() {
         return arrayList.size();
     }
