@@ -3,6 +3,7 @@ package com.example.rahulkapoor.fragmentpageradapterdummy;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.example.rahulkapoor.fragmentpageradapterdummy.fragment.Fragment1;
+import com.example.rahulkapoor.fragmentpageradapterdummy.fragment.fragmentRoom;
 
 import java.util.ArrayList;
 
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivMenu;
     private Button btnChangeData;
     private DrawerLayout drawerLayout;
+    private FrameLayout frameLayout;
     private ArrayList<String> rooms = new ArrayList<>();
     private ArrayList<String> fragData = new ArrayList<>();
     private ArrayList<Fragment> fragmentArrayList = new ArrayList<>();
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         tabLayout = (TabLayout) findViewById(R.id.tab);
         btnChangeData = (Button) findViewById(R.id.btn_change_data);
+        frameLayout = (FrameLayout) findViewById(R.id.frame);
         //frame = (FrameLayout) findViewById(R.id.frame);
         //btnSubmit = (Button) findViewById(R.id.btnsubmit);
 
@@ -63,13 +67,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
 
-                setData(1);
+                //take user to new fragment;
+                fragmentRoom fragmentRoom = new fragmentRoom();
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().add(R.id.frame, fragmentRoom).commit();
 
             }
         });
 
-        viewPager.setVisibility(View.VISIBLE);
-        tabLayout.setVisibility(View.VISIBLE);
+//        viewPager.setVisibility(View.VISIBLE);
+//        tabLayout.setVisibility(View.VISIBLE);
         //frame.setVisibility(View.GONE);
         //btnSubmit.setVisibility(View.GONE);
 
@@ -111,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
         pagerAdapter = new com.example.rahulkapoor.fragmentpageradapterdummy.adapter.PagerAdapter(getSupportFragmentManager(), rooms, fragmentArrayList);
         viewPager.setAdapter(pagerAdapter);
+        viewPager.setCurrentItem(2);
         tabLayout.setupWithViewPager(viewPager);
 
 

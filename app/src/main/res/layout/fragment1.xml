@@ -6,10 +6,24 @@
                 android:padding="4dp">
 
 
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:layout_margin="8dp"
+        android:max="20"
+        android:progress="12"
+android:progressDrawable="@drawable/custom_seekbar"
+        android:thumb="@drawable/color_thumb"
+        />
+
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/seekbar"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
         >
 
