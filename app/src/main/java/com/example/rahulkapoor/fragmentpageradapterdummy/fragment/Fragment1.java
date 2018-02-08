@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.rahulkapoor.fragmentpageradapterdummy.R;
@@ -26,6 +27,8 @@ public class Fragment1 extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<String> resList = new ArrayList<>();
     private String fragData;
+    private SeekBar seekBar;
+    private TextView tvActive, tvMax;
 
 
     public View onCreateView(final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
@@ -33,23 +36,40 @@ public class Fragment1 extends Fragment {
 
         //tvData = (TextView) v.findViewById(R.id.tv_data);
         recyclerView = (RecyclerView) v.findViewById(R.id.rv);
+        seekBar = (SeekBar) v.findViewById(R.id.seekbar);
+        tvActive = (TextView) v.findViewById(R.id.tv_active);
+        tvMax = (TextView) v.findViewById(R.id.tv_total);
 
-        fragData = getArguments().getString("fragData");
-        //String[] arrData = fragData.split(",");
-        data = getArguments().getString("text");
+        setSeekbarData();
+
+
+
+//        fragData = getArguments().getString("fragData");
+//        //String[] arrData = fragData.split(",");
+//        data = getArguments().getString("text");
         //tvData.setText(data);
 
-        //delim is ",";
-        String[] data = fragData.split(",");
-        for (int i = 0; i < data.length; i++) {
-            resList.add(data[i]);
-        }
-
-        MyAdapter myAdapter = new MyAdapter(getContext(), resList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(myAdapter);
+//        //delim is ",";
+//        String[] data = fragData.split(",");
+//        for (int i = 0; i < data.length; i++) {
+//            resList.add(data[i]);
+//        }
+//
+//        MyAdapter myAdapter = new MyAdapter(getContext(), resList);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setAdapter(myAdapter);
 
         return v;
+    }
+
+    /**
+     * handle seekbar data;
+     */
+    private void setSeekbarData() {
+        seekBar.setMax(15);
+        seekBar.setProgress(9);
+        tvMax.setText("Total devices : 15");
+        tvActive.setText("devices active : 9");
     }
 
 

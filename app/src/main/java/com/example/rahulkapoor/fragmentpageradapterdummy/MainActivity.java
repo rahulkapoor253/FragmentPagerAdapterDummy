@@ -8,15 +8,11 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.example.rahulkapoor.fragmentpageradapterdummy.fragment.Fragment1;
-import com.example.rahulkapoor.fragmentpageradapterdummy.fragment.fragmentRoom;
+import com.example.rahulkapoor.fragmentpageradapterdummy.fragment.MyDialogFragment;
 
 import java.util.ArrayList;
 
@@ -50,78 +46,25 @@ public class MainActivity extends AppCompatActivity {
         //frame = (FrameLayout) findViewById(R.id.frame);
         //btnSubmit = (Button) findViewById(R.id.btnsubmit);
 
-        ivMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-                if (drawerLayout.isDrawerOpen(Gravity.START)) {
-                    drawerLayout.closeDrawer(Gravity.END);
-                } else {
-                    drawerLayout.openDrawer(Gravity.START);
-                }
-            }
-        });
-
-        //setFragment();
-
-        btnChangeData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(final View v) {
-
-                //take user to new fragment;
-                fragmentRoom fragmentRoom = new fragmentRoom();
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().add(R.id.frame, fragmentRoom).commit();
-
-            }
-        });
 
 //        viewPager.setVisibility(View.VISIBLE);
 //        tabLayout.setVisibility(View.VISIBLE);
         //frame.setVisibility(View.GONE);
         //btnSubmit.setVisibility(View.GONE);
 
+//        Fragment1 fragment1 = new Fragment1();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        fragmentManager.beginTransaction().add(R.id.frame, fragment1).commit();
 
-        setData(0);
+        showEditDialog();
 
     }
 
-    private void setData(final int mode) {
-        fragmentArrayList.clear();
 
-        for (int i = 0; i < 10; i++) {
-            //multiple instances of fragment1;
-            fragData.clear();
-            res = "";
-            Fragment1 fragment1 = new Fragment1();
-            Bundle bundle = new Bundle();
-            bundle.putString("text", "HIE THERE " + i);
-            if (mode == 1) {
-                Log.i("mode", "new data added");
-                fragData.add("new data");
-            } else {
-                fragData.add("fragment data1 : " + i);
-                fragData.add("fragment data2 : " + i);
-            }
-            for (int j = 0; j < fragData.size(); j++) {
-                res = res + fragData.get(j) + ",";
-            }
-            res = res.substring(0, res.length() - 1);
-            bundle.putString("fragData", res);
-            fragment1.setArguments(bundle);
-            fragmentArrayList.add(fragment1);
-        }
-
-
-        for (int i = 0; i < 10; i++) {
-            rooms.add("hie there : " + i);
-        }
-
-        pagerAdapter = new com.example.rahulkapoor.fragmentpageradapterdummy.adapter.PagerAdapter(getSupportFragmentManager(), rooms, fragmentArrayList);
-        viewPager.setAdapter(pagerAdapter);
-        viewPager.setCurrentItem(2);
-        tabLayout.setupWithViewPager(viewPager);
-
-
+    private void showEditDialog() {
+        FragmentManager fm = getSupportFragmentManager();
+        MyDialogFragment dialogFragment = MyDialogFragment.newInstance(0);
+        dialogFragment.show(fm, "fragment_edit_name");
     }
 
 
