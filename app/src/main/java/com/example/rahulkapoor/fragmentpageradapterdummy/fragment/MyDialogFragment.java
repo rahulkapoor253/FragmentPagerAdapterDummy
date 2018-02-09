@@ -57,7 +57,7 @@ public class MyDialogFragment extends DialogFragment {
                 //to close this tutorial screen when next for last fragment is pressed;
                 if (count == 3) {
                     Toast.makeText(getContext(), "Close this tutorial screen.", Toast.LENGTH_SHORT).show();
-
+                    getDialog().dismiss();
                 } else {
                     count++;
                     setData(count);
@@ -78,24 +78,24 @@ public class MyDialogFragment extends DialogFragment {
 
         switch (count) {
             case 1:
-                ivDot1.setImageResource(R.drawable.active_square);
-                ivDot2.setImageResource(R.drawable.inactive);
-                ivDot3.setImageResource(R.drawable.inactive);
-                tvContent.setText("HIE THIS IS FRAGMENT 1.");
+                ivDot1.setImageResource(R.drawable.ic_circle_filled_dark);
+                ivDot2.setImageResource(R.drawable.ic_circle_filled_light);
+                ivDot3.setImageResource(R.drawable.ic_circle_filled_light);
+                tvContent.setText("HIE THIS IS FRAGMENT INSTANCE 1.");
                 btnPrev.setVisibility(View.GONE);
                 break;
             case 2:
-                ivDot1.setImageResource(R.drawable.inactive);
-                ivDot2.setImageResource(R.drawable.active_square);
-                ivDot3.setImageResource(R.drawable.inactive);
-                tvContent.setText("HIE THIS IS FRAGMENT 2.");
+                ivDot1.setImageResource(R.drawable.ic_circle_filled_light);
+                ivDot2.setImageResource(R.drawable.ic_circle_filled_dark);
+                ivDot3.setImageResource(R.drawable.ic_circle_filled_light);
+                tvContent.setText("HIE THIS IS FRAGMENT INSTANCE 2.");
                 btnPrev.setVisibility(View.VISIBLE);
                 break;
             case 3:
-                ivDot1.setImageResource(R.drawable.inactive);
-                ivDot2.setImageResource(R.drawable.inactive);
-                ivDot3.setImageResource(R.drawable.active_square);
-                tvContent.setText("HIE THIS IS FRAGMENT 3.");
+                ivDot1.setImageResource(R.drawable.ic_circle_filled_light);
+                ivDot2.setImageResource(R.drawable.ic_circle_filled_light);
+                ivDot3.setImageResource(R.drawable.ic_circle_filled_dark);
+                tvContent.setText("HIE THIS IS FRAGMENT INSTANCE 3.");
                 btnPrev.setVisibility(View.VISIBLE);
                 break;
 

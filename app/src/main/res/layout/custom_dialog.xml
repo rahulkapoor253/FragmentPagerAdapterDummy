@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="wrap_content"
+              android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:layout_gravity="center"
+              android:background="@drawable/shape_dialog"
               android:orientation="vertical"
-              android:padding="4dp">
+    >
 
     <ImageView
         android:id="@+id/iv_display"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@drawable/image_2"/>
 
     <TextView
         android:id="@+id/tv_content"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_weight="0.2"
+        android:layout_margin="4dp"
         android:gravity="center"
-        android:maxLines="3"
-        android:text="hie there this is fragment 1."
+        android:padding="5dp"
+        android:text="HIE THIS IS FRAGMENT INSTANCE 1."
         android:textSize="16sp"
 
         />
@@ -31,13 +30,15 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="4dp">
 
         <Button
             android:id="@+id/btn_prev"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
+            android:background="@drawable/button_listener"
+            android:padding="2dp"
             android:text="prev"/>
 
         <LinearLayout
@@ -45,10 +46,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_gravity="center"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_margin="4dp"
             android:orientation="horizontal"
-            android:padding="8dp">
+            android:padding="4dp">
 
             <ImageView
                 android:id="@+id/dot_1"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="2dp"
-                android:src="@drawable/active_square"/>
+                android:src="@drawable/ic_circle_filled_dark"/>
 
             <ImageView
                 android:id="@+id/dot_2"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="2dp"
-                android:src="@drawable/inactive"/>
+                android:src="@drawable/ic_circle_filled_light"/>
 
             <ImageView
                 android:id="@+id/dot_3"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="2dp"
-                android:src="@drawable/inactive"/>
+                android:src="@drawable/ic_circle_filled_light"/>
 
 
         </LinearLayout>
@@ -82,6 +82,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:background="@drawable/button_listener"
+            android:padding="2dp"
             android:text="next"/>
 
 
